@@ -11,7 +11,8 @@ engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
-# 3. Criamos a classe SessionLocal. Cada instância dela será uma sessão no banco.
+# 3. Criamos a classe SessionLocal, cada instância dela será uma
+# sessão no banco.
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # 4. Base para cria os modelos (tabelas) depois
