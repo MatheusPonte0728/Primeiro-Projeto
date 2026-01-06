@@ -11,3 +11,4 @@ class Cliente(Base):
     email = Column(String, unique=True, index=True)  # Email deve ser unico
     limite_credito = Column(Float, default=0.0)
     ativo = Column(Boolean, default=True)
+    
