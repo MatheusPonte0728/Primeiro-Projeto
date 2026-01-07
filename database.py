@@ -2,18 +2,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# 1. Definimos o nome do banco de dados (sera um arquivo local)
+# 1. Definimos o nome do banco de dados (será um arquivo local)
 SQLALCHEMY_DATABASE_URL = "sqlite:///./clientes.db"
 
-# 2. Criamos a "engine" que gerencia a comunicação com o banco
-# connect_args={"check_same_thread": False} é nescesssario apenas para SQLite
+# 2. Criamos a 'engine' que gerencia a comunicação com o banco
+# connect_args={"check_same_thread": False} é necessário apenas para SQLite
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
-# 3. Criamos a classe SessionLocal, cada instância dela será uma
-# sessão no banco.
-
+# 3. Criamos a classe SessionLocal para gerenciar sessões no banco.
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-# 4. Base para cria os modelos (tabelas) depois
+
+# 4. Base para criar os modelos (tabelas) depois
 Base = declarative_base()
