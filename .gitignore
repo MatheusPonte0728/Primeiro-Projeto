@@ -1,0 +1,15 @@
+# Ambientes Virtuais (Pasta que contém as bibliotecas baixadas)
+venv/
+.venv/
+env/
+
+# Cache do Python (Arquivos temporários que o Python cria sozinho)
+__pycache__/
+*.py[cod]
+
+# Banco de Dados Local (Para que o seu banco de dados de teste não vá para o GitHub)
+*.db
+*.sqlite3
+
+# Arquivos de configuração do VS Code
+.vscode/
